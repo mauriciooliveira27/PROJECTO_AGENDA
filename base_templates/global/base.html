@@ -8,9 +8,12 @@
 </head>
 <body>
     {% include "global/partial/_header.html" %}
+    {% include "global/partial/_message.html" %}
+    
+   
     <main class="content">
-    {% block content %}{% endblock content %}
+        {% block content %}{% endblock content %}
+        {% include "global/partial/_pagination.html" %}
     </main>
-    {% include "global/partial/_pagination.html" %}
 </body>
 </html>

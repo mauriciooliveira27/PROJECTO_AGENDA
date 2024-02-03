@@ -3,6 +3,7 @@ from django.views import View
 from django.db.models import Q
 from contact.models import Contact
 from django.core.paginator import Paginator
+from django.contrib import messages
 # Create your views here.
 
 
@@ -29,7 +30,7 @@ class IndexView(View):
 
 
 class ContactView(View):
-    template_name = 'contact/index.html'
+    template_name = 'contact/contact.html'
 
     def get(self, request, id):
         try:

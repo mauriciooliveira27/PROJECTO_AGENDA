@@ -28,5 +28,21 @@
     <p>
         <b>Category :</b>  {{contact.cotegory.name}}
     </p>
+
+    {% if contact.picture %}
+    <p>
+        <img src="{{contact.picture.url}}" alt="{{contact.first_name}}">
+    </p>
+    {% endif %}
+    <div class="contact-links">
+        <a class="btn btn-link" href="{% url 'contact:update' contact.id %}">Update</a>
+        
+        <form action="{% url 'contact:delete' contact.id %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button class="btn btn-link btn-delete" type="submit">Delete</button>
+        </form>
+    </div>
+    
+    </div>
 </div>    
 {% endblock content %}
